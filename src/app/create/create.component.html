@@ -1,0 +1,32 @@
+<div class="body-container">
+    <div class="title">
+        <h2>Create Product</h2>
+    </div>
+
+    <div class="content">
+        <div class="error-msg">{{ errorMsg }}</div>
+        <div class="success-msg">{{ successMsg }}</div>
+
+        <div>
+            <input type="text" placeholder="Name" [(ngModel)]="name" minlength="3" maxlength="100"
+                [ngClass]="invalidFields.indexOf('name') !== -1 ? 'invalid' : ''"> 
+            <span>between 3 and 100 characters</span>
+        </div>
+
+        <div>
+            <textarea placeholder="Description" [(ngModel)]="desc" minlength="5" maxlength="1000"
+                [ngClass]="invalidFields.indexOf('desc') !== -1 ? 'invalid' : ''" rows="5"></textarea>
+            <span>between 5 and 1000 characters</span>
+        </div>
+
+        <div>
+            <input type="number" placeholder="Price" [(ngModel)]="price" min="1" max="20000"
+                [ngClass]="invalidFields.indexOf('price') !== -1 ? 'invalid' : ''" (input)="priceInput($event)">
+            <span>between 1 and 20,000 with 2 deimal</span>
+        </div>
+
+        <div>
+            <button (click)="create()">Create</button>
+        </div>
+    </div>
+</div>

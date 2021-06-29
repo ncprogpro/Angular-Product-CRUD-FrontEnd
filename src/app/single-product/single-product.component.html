@@ -1,0 +1,43 @@
+<div class="body-container">
+    <div class="title">
+        <h2>Product Detail</h2>
+    </div>
+
+    <div class="content">
+        <div class="error-msg">{{ errorMsg }}</div>
+        <div class="success-msg">{{ successMsg }}</div>
+
+        <div class="photo"><img src="assets/images/default-product.png" alt="Product"></div>
+
+        <div>
+            <span class="title">Name: </span>
+            <input type="text" placeholder="Name" [(ngModel)]="name" minlength="3" maxlength="100"
+                [ngClass]="invalidFields.indexOf('name') !== -1 ? 'invalid' : ''" disabled> 
+            <span *ngIf="isEdit">between 3 and 100 characters</span>
+        </div>
+
+        <div>
+            <span class="title">Description: </span>
+            <textarea placeholder="Description" [(ngModel)]="desc" minlength="5" maxlength="1000"
+                [ngClass]="invalidFields.indexOf('desc') !== -1 ? 'invalid' : ''" 
+                [ngClass]="isEdit ? 'edit-mode': ''"
+                rows="5" [disabled]="!isEdit"></textarea>
+            <span *ngIf="isEdit">between 5 and 1000 characters</span>
+        </div>
+
+        <div>
+            <span class="title">Price: </span>
+            <input type="number" placeholder="Price" [(ngModel)]="price" min="1" max="20000"
+                [ngClass]="invalidFields.indexOf('price') !== -1 ? 'invalid' : ''" 
+                [ngClass]="isEdit ? 'edit-mode': ''"
+                [disabled]="!isEdit">
+            <span *ngIf="isEdit">between 1 and 20,000 with 2 deimal</span>
+        </div>
+
+        <div>
+            <button (click)="isEdit = true">Edit</button>
+            <button (click)="update()" *ngIf="isEdit">Update</button>
+            <button (click)="delete()">Delete</button>
+        </div>
+    </div>
+</div>

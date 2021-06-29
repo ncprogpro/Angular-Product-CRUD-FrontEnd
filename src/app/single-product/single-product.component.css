@@ -1,0 +1,43 @@
+.content > div {
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.content .invalid {
+    border: solid 1px red;
+}
+
+.content input,
+.content textarea {
+    width: 200px;
+    margin-right: 25px;
+    float: left;
+    border: unset;
+    color: #000;
+}
+
+.content input.edit-mode,
+.content textarea.edit-mode {
+    border: solid 1px;
+}
+
+.content span {
+    color: gray;
+    float: left;
+}
+
+.content .error-msg {
+    color: red;
+}
+
+.content .success-msg {
+    color: green;
+}
+
+.content div button {
+    margin: 0 10px;
+}
+
+.content div .title {
+    width: 90px;
+}

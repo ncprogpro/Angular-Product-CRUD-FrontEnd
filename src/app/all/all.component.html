@@ -1,0 +1,15 @@
+<div class="body-container">
+    <div class="title">
+        <h2>All Products</h2>
+    </div>
+
+    <div class="products">
+        <div class="col-3 item" *ngFor="let product of products">
+            <img src="assets/images/default-product.png" alt="Product">
+            <h4>{{ product.name }}</h4>
+            <p>{{ product.description }}</p>
+            <h6>Price: {{ product.price }}</h6>
+            <a routerLink="/detail/{{ product.name }}">Detail</a>
+        </div>
+    </div>
+</div>

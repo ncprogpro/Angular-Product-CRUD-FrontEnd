@@ -1,0 +1,39 @@
+.products {
+    overflow: hidden;
+}
+
+.products .col-3 {
+    width: calc(23% - 20px);
+    margin: 1%;
+    float: left;
+}
+
+.products .item {
+    padding: 10px;
+    box-shadow: 0 0 12px rgb(0 0 0 / 20%);
+}
+
+.products .item img {
+    width: 100%;
+}
+
+.body-container .title {
+    margin-left: 1%;
+}
+
+.body-container {
+    max-width: 1240px;
+    margin: auto;
+    padding-bottom: 70px;
+}
+
+@media (max-width: 767px) {
+    .products .col-3 {
+        width: calc(95% - 20px);
+        margin: 25px 2.5%;
+    }
+
+    .body-container .title {
+        margin-left: 2.5%;
+    }
+}

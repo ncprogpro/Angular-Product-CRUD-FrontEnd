@@ -1,0 +1,27 @@
+.content > div {
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.content .invalid {
+    border: solid 1px red;
+}
+
+.content input,
+.content textarea {
+    width: 200px;
+    margin-right: 25px;
+    float: left;
+}
+
+.content span {
+    color: gray;
+}
+
+.content .error-msg {
+    color: red;
+}
+
+.content .success-msg {
+    color: green;
+}

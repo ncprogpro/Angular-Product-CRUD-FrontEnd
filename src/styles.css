@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Header */
+header h2 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 50px;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding-left: 0;
+    overflow: hidden;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header nav ul li {
+    float: left;
+    margin: 0 10px;
+    padding: 10px;
+}
+
+header nav ul li a {
+    color: #000;
+    text-decoration: none;
+}
+
+header nav ul li:active a {
+    color: blue;
+}
+
+.body-container {
+    max-width: 1240px;
+    margin: auto;
+    padding-bottom: 70px;
+}
