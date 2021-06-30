@@ -30,7 +30,7 @@
             <input type="number" placeholder="Price" [(ngModel)]="price" min="1" max="20000"
                 [ngClass]="invalidFields.indexOf('price') !== -1 ? 'invalid' : ''" 
                 [ngClass]="isEdit ? 'edit-mode': ''"
-                [disabled]="!isEdit">
+                [disabled]="!isEdit" (input)="priceInput($event)">
             <span *ngIf="isEdit">between 1 and 20,000 with 2 deimal</span>
         </div>
 

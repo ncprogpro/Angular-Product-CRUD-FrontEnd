@@ -88,8 +88,6 @@ export class CreateComponent implements OnInit {
         error => {
           console.log(error);
         });
-
-
     
   }
 
@@ -103,12 +101,18 @@ export class CreateComponent implements OnInit {
     if (!value) return value;
     const pattern = /^[0-9]+(\.[0-9]{1,2})?$/;
 
-    if( pattern.test(value) ) {
-      return value;
-    } else {
-      const rounded = Math.round(value * 100) / 100;
+    if( value > 20000 ) {
+      const converted = Math.floor(value / 10);
 
-      return rounded;
+      return converted;
+    } else {
+      if( pattern.test(value) ) {
+        return value;
+      } else {
+        const converted = Math.floor(value * 100) / 100;
+  
+        return converted;
+      }
     }
 
   }

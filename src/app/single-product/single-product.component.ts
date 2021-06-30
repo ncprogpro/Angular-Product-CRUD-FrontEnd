@@ -17,6 +17,7 @@ export class SingleProductComponent implements OnInit {
   errorMsg = '';
   successMsg = '';
   isEdit = false;
+  formattedPrice = '';
   
 
   constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router) { }
@@ -107,6 +108,31 @@ export class SingleProductComponent implements OnInit {
         error => {
           console.log(error);
         });
+  }
+
+  priceInput(event: any) {
+    let value = event.target.value;
+    this.formattedPrice = this.formatPriceWith2Decimal(value)
+    event.target.value = this.formattedPrice;
+  }
+
+  formatPriceWith2Decimal(value: any) {
+    if (!value) return value;
+    const pattern = /^[0-9]+(\.[0-9]{1,2})?$/;
+
+    if( value > 20000 ) {
+      const converted = Math.floor(value / 10);
+
+      return converted;
+    } else {
+      if( pattern.test(value) ) {
+        return value;
+      } else {
+        const converted = Math.floor(value * 100) / 100;
+  
+        return converted;
+      }
+    }
   }
 
 }
